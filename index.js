@@ -11,6 +11,7 @@ import orderRouter from "./routers/orderRouter.js"
 import reviewRouter from "./routers/reviewRouter.js"
 import contactRouter from "./routers/contactRouter.js"
 
+
 const app = express();
 
 app.use(bodyParser.json()); //app.use for add middleware
@@ -61,7 +62,7 @@ app.use("/api/users",userRouter);//api endpoint
 app.use("/api/products",productRouter);
 app.use("/api/orders",orderRouter);
 app.use("/api/reviews",reviewRouter);
-app.use("/api/contacts",contactRouter);
+app.use("/api/contact",contactRouter);
 
 
 app.listen(5000,()=>{
