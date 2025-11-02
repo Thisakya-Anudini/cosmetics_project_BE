@@ -1,12 +1,9 @@
 import express from 'express';
- 
-import { submitContact, getContacts } from '../controllers/contactController.js'; // Your controller
+import { submitContact, getContacts } from '../controllers/contactController.js';
 
 const router = express.Router();
 
-// POST route to submit contact form
-router.post('/contact', submitContact);
-router.get('/contact', getContacts);
-
+router.post('/contact', submitContact);  // POST route
+router.get('/contact', getContacts);     // GET route (optional)
 
 export default router;

@@ -62,7 +62,7 @@ app.use("/api/users",userRouter);//api endpoint
 app.use("/api/products",productRouter);
 app.use("/api/orders",orderRouter);
 app.use("/api/reviews",reviewRouter);
-app.use("/api/contact",contactRouter);
+app.use("/api/contact", contactRouter);
 
 
 app.listen(5000,()=>{
