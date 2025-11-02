@@ -31,7 +31,7 @@ export function createUser(req,res){
         lastName:req.body.lastName,
         email:req.body.email,
         password:passwordHash,
-        role:req.body.role,
+        role:req.body.role || 'user',
         phone:req.body.phone,
     }
 
@@ -39,7 +39,7 @@ export function createUser(req,res){
     user.save().then(
         ()=>{
             res.json({
-                message:"user data saved"
+                message:"Registration successful"
             })
         }
     ).catch(

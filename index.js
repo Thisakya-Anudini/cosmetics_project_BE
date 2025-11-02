@@ -8,6 +8,8 @@ import productRouter from "./routers/productRouter.js";
 import jwt from "jsonwebtoken"
 import cors from "cors"
 import orderRouter from "./routers/orderRouter.js"
+import reviewRouter from "./routers/reviewRouter.js"
+import contactRouter from "./routers/contactRouter.js"
 
 const app = express();
 
@@ -58,6 +60,9 @@ mongoose.connect(connectionString).then(
 app.use("/api/users",userRouter);//api endpoint
 app.use("/api/products",productRouter);
 app.use("/api/orders",orderRouter);
+app.use("/api/reviews",reviewRouter);
+app.use("/api/contacts",contactRouter);
+
 
 app.listen(5000,()=>{
     console.log("server started");
