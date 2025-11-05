@@ -1,6 +1,6 @@
 import express from "express";
 
-import { createUser, getUser, loginUser, googleLogin, sendOTP, resetPassword } from "../controllers/userController.js";
+import { createUser, getUser, loginUser, googleLogin, sendOTP, resetPassword,getAllUsers } from "../controllers/userController.js";
 
 const userRouter = express.Router();
 
@@ -10,4 +10,5 @@ userRouter.post("/login",loginUser)
 userRouter.post("/google-login", googleLogin)
 userRouter.post("/send-otp", sendOTP)
 userRouter.post("/reset-password",resetPassword)
+userRouter.get("/all", getAllUsers);
 export default userRouter

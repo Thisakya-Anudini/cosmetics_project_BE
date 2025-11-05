@@ -107,6 +107,15 @@ export function getUser(req,res){   //get user by decoding token
         res.json(req.user)
     }
 }
+export async function getAllUsers(req, res) {
+  try {
+    const users = await User.find();  // Fetch all users from the database
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ message: "Failed to fetch users", error: err });
+  }
+}
+
 
 export function isAdmin(req)
 {

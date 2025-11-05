@@ -150,3 +150,12 @@ export function updateOrder(req,res){
 		})
 	}
 }
+export async function getAllOrders(req, res) {
+  try {
+    const orders = await Order.find();  // Fetch all orders from the database
+    res.json(orders);  // Send the list of orders as a response
+  } catch (err) {
+    console.error("Error fetching orders:", err);
+    res.status(500).json({ message: "Failed to fetch orders" });
+  }
+}
